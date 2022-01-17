@@ -1,3 +1,7 @@
+body {
+    font-family: $font-family;
+}
+
 .container {
     max-width: $max-width;
     margin-left: auto;
@@ -12,17 +16,13 @@ a {
 
 .icon {
     display: inline-block;
-    width: 1em; //fontun yüksekliği kadar 1 em oluyo
-    height: 1em;
+    width: 24px; //fontun yüksekliği kadar 1 em oluyo
+    height: 24px;
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
 }
 
-body {
-    font-size: 16px;
-    font-family: $font-family;
-}
 .button {
     display: inline-flex;
     align-items: center;
@@ -31,6 +31,19 @@ body {
     height: $finger-size;
     color: white;
     font-weight: bold;
-    background-color: $color-blue;
+    background-color: transparent;
     border-radius: $border-radius;
+
+    &-icon {
+        justify-content: center;
+        color: black;
+        padding-left: 0;
+        padding-right: 0;
+        width: $finger-size;
+    }
+
+    &-blue {
+        color: white;
+        background-color: $color-blue;
+    }
 }
