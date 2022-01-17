@@ -2,6 +2,7 @@
     border-bottom: 1px solid #ddd;
     
     .container {
+        position: relative;
         display: flex;
         align-items: center;
         height: 64px;
@@ -13,17 +14,44 @@
         }
     }
 
-    
-    &-menu {
+    &-switch {
         margin-left: auto;
+        @include mq{
+            display: none;
+        }
+    }
+
+    &-menu {
+        //display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        padding-right: $gutter;
+        padding-left: $gutter;
+        padding-bottom: 20px;
         display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0 20px 30px rgba(black, .2);
+
+        @include mq("tablet"){
+            display: flex;
+            margin-left: auto;
+        }
+
 
         &-user{
             margin-right: 10px;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+
             a {
+                width: 100%;
                 display: inline-flex;
                 align-items: center;
+                justify-content: center;
                 padding-left: 20px;
                 padding-right: 20px;
                 height: $finger-size;
@@ -34,12 +62,19 @@
             }
         }
 
-        &-switch {
-            
+        &-property {
+            margin-top: 20px;
+            justify-content: center;
         }
         &-helper{
-            margin-left: 20px;
+            margin-top: 20px;
             display: flex;
+            justify-content: center;
+
+            @include mq("tablet") {
+                margin-left: 20px;
+            }
+
         select {
             appearance: none;
             background-color: transparent;
